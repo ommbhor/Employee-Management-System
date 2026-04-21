@@ -17,6 +17,8 @@ const Login = ({handleLogin}) => {
 
         <div className="border-2 border-emerald-600 p-20 rounded-xl">
 
+            <h1 className='flex justify-center mb-8 font-bold text-3xl items-center underline'>Employee Management Login</h1>
+
             <form onSubmit={(e)=>{submitHandler(e)}} className='flex flex-col items-center justify-center'>
 
                 <input
