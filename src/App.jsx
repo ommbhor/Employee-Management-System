@@ -24,21 +24,23 @@ const App = () => {
 
 
   const handleLogin = (email, password) => {
-    if (email == 'admin@me.com' && password == '123') {
+    if (email === 'admin@me.com' && password === '123') {
       setUser('admin')
       localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
-
-    } else if (userData) {
-      const employee = userData.find((e) => email == e.email && e.password == password)
+      return
+    }
+    
+    if (userData) {
+      const employee = userData.find((e) => email === e.email && password === e.password)
       if (employee) {
         setUser('employee')
         setloggedInUserData(employee)
         localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee' , data: employee }))
+        return
       }
-
-    } else {
-      alert("Invalid Credentials")
     }
+    
+    alert("Invalid Credentials")
   }
 
 
